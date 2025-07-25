@@ -75,7 +75,9 @@ public class MultiThreadedClient {
 
                         socket.close();
                         long end = System.currentTimeMillis();
-                        turnaroundTimes[index] = end - start;
+                        long turnaroundTime = end - start;
+                        turnaroundTimes[index] = turnaroundTime;
+                        System.out.println("Turn-around Time for client " + (index + 1) + ": " + turnaroundTime + " ms");
 
                     } catch (IOException e) {
                         System.err.println("client " + (index + 1) + " failed: " + e.getMessage());
